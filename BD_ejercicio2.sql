@@ -102,3 +102,24 @@ set apellido= "Sansino"
 where id=6;
 
 select * from registros_personas;
+
+select nombre from registros_personas limit 5;
+
+select length(nombre) from registros_personas limit 5;
+select length(nombre) As nombre_length from registros_personas limit 5;
+select upper(nombre) from registros_personas limit 5;
+select upper(nombre) As nombre_upper from registros_personas limit 5;
+select lower(nombre) from registros_personas limit 5;
+select lower(nombre) As nombre_lower from registros_personas limit 5;
+select concat(nombre, ",", apellido)from registros_personas limit 5;
+select concat(nombre, ",", apellido) As nombre_apellido from registros_personas limit 5;
+select count(*) from registros_personas;
+select count(*)  as recuento from registros_personas;
+select * from registros_personas where estado_civil= "Casado";
+select count(*) from registros_personas where estado_civil= "Casado";
+select count(*) as registro_casados from registros_personas where estado_civil= "Casado";
+select fecha_cumpleaños from registros_personas limit 5;
+select day(fecha_cumpleaños) from registros_personas limit 5;
+select month(fecha_cumpleaños) as mes_cumple from registros_personas limit 5;
+select estado_civil, count(*) as recuento from registros_personas group by estado_civil;
+select estado_civil, count(*) as recuento from registros_personas group by estado_civil having estado_civil is not null;
