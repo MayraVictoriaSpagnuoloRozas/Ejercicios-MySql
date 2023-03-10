@@ -59,7 +59,38 @@ select price from article where price= 10 or price=110;
 
 select price, name from article order by price desc , name desc;
 
+use laboratory;
 
+select*from client;
 
+insert into client values
+(6,"Rogelio", "Rozas", 20-11985362-6, "Colón 96", null),
+(7,"Julieta", "Spagnuolo", 27-12729674-5, "Lavalleja 612",null),
+(8,"Jano", "Suárez", 20-47958819-0, "Av. Díaz Vélez 3625", null),
+(9,"Libertad", "Suárez", 20-56283806-3, "Av. Díaz Vélez 3625", null),
+(10,"Jorge", "Rozas", 32-11852147-6, "Miraflores 654", null);
 
+use laboratory;
+set SQL_SAFE_UPDATES=0;
+update client
+set name="José"
+where id=1;
 
+set SQL_SAFE_UPDATES=0;
+update client
+set name= "Pablo", last_name= "Fuentes", cuit= 20-21053119-0
+where id=3;
+
+update client
+set comments=""
+where comments=null;
+
+delete from client where last_name= "Perez";
+
+delete from client where cuit="%0";
+
+select price, price*0.2 as aumento, price +(price*0.2) as total from article where price<= 50;
+select price, price*0.15 as aumento, price +(price*0.15) as total from article where price> 50;
+select price, price*0.05 as rebaja, price -(price*0.05) as total from article where price>200;
+
+delete from article where stock=0;
