@@ -94,3 +94,23 @@ select price, price*0.15 as aumento, price +(price*0.15) as total from article w
 select price, price*0.05 as rebaja, price -(price*0.05) as total from article where price>200;
 
 delete from article where stock=0;
+
+select max(amount)
+from invoice;
+
+select min(amount)
+from invoice;
+
+select min(amount)from invoice  where date >2000 and date <2008;
+
+select date from invoice where date=2016;
+
+select number from invoice where number=3;
+
+select count(*) from invoice;
+
+select amount from invoice where amount>35000 and amount <40000;
+
+select date, count(*) from invoice group by date;
+
+select letter, count(*) from invoice group by letter;
