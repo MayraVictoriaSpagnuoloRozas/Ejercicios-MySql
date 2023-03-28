@@ -31,6 +31,7 @@ values
 (4,"Floresta"),
 (5,"Banfield");
 
+select*from empleado;
 select * from empleado E join sucursal S on E.idsucursal = S.id;
 
 select 
